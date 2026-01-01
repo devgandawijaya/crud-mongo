@@ -26,4 +26,13 @@ func SetupRoutes(r *gin.Engine) {
 		product.DELETE("/:id", controllers.DeleteProduct)
 	}
 
+	profil := r.Group("/profil")
+	{
+		profil.POST("", controllers.Createprofil)
+		profil.GET("", controllers.GetProfil)
+		profil.GET("/:id", controllers.GetProfilByID)
+		profil.PUT("/:id", controllers.UpdateProfil)
+		profil.DELETE("/:id", controllers.DeleteProfil)
+	}
+
 }
